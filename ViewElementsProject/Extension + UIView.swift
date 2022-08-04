@@ -1,37 +1,47 @@
 //
-//  UIView + extension.swift
+//  Extension + UIView.swift
 //  ViewElementsProject
 //
-//  Created by Vasichko Anna on 03.08.2022.
+//  Created by Vasichko Anna on 04.08.2022.
 //
 
 import UIKit
+
 //@IBDesignable extension UIView {
 //    @IBInspectable var cornerRadius: CGFloat {
 //        get {
 //            layer.cornerRadius
-//        }
-//        set {
+//        } set {
 //            layer.cornerRadius = newValue
 //            layer.masksToBounds = (newValue > 0)
 //        }
 //    }
 //}
 
+
 @IBDesignable extension UIView {
     @IBInspectable var shadowRadius: CGFloat {
-        get { layer.shadowRadius }
-        set { layer.shadowRadius = newValue }
+        get {
+            layer.shadowRadius
+        } set {
+            layer.shadowRadius = newValue
+        }
     }
     
     @IBInspectable var shadowOpacity: CGFloat {
-        get { CGFloat(layer.shadowOpacity) }
-        set { layer.shadowOpacity = Float(newValue) }
+        get {
+            CGFloat(layer.shadowOpacity)
+        } set {
+            layer.shadowOpacity = Float(newValue)
+        }
     }
     
     @IBInspectable var shadowOffset: CGSize {
-        get { layer.shadowOffset }
-        set { layer.shadowOffset = newValue }
+        get {
+            layer.shadowOffset
+        } set {
+            layer.shadowOffset = newValue
+        }
     }
     
     @IBInspectable var shadowColor: UIColor? {
@@ -40,8 +50,9 @@ import UIKit
                 return nil
             }
             return UIColor(cgColor: cgColor)
+        } set {
+            layer.shadowColor = newValue?.cgColor
         }
-        set { layer.shadowColor = newValue?.cgColor }
     }
 }
 
@@ -52,15 +63,15 @@ import UIKit
                 return nil
             }
             return UIColor(cgColor: cgColor)
+        } set {
+            layer.borderColor = newValue?.cgColor
         }
-        set { layer.borderColor = newValue?.cgColor }
     }
     
     @IBInspectable var borderWidth: CGFloat {
         get {
             layer.borderWidth
-        }
-        set {
+        } set {
             layer.borderWidth = newValue
         }
     }
